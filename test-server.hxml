@@ -1,0 +1,8 @@
+-lib tink_io
+-lib tink_tcp
+-lib tink_http
+-lib tink_web
+-cp src
+-main TestServer
+
+-hl test-server.hl
