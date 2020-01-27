@@ -40,8 +40,8 @@ class WrappedWriteStream {
 			var buf = chunk.toBytes();
 			this.native.write(buf, result -> {
 				final outcome = result ? Success(true) : Failure(new Error('Unable to write chunk ($chunk)'));
-				cb(outcome);
 				this.onEnd.invoke(result);
+				cb(outcome);
 			});
 		});
 	}

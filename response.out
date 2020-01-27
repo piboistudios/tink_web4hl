@@ -1,0 +1,1317 @@
+----------------------------240192515968360404142788
+Content-Disposition: form-data; name="test"; filename="response.txt"
+Content-Type: text/plain
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\gabriel.hayes\Desktop\test\tink> haxe test-server.hxml
+C:\Users\gabriel.hayes\AppData\Roaming\haxe\haxe_libraries/tink_core/1.18.0/github/cb6a569a668dca4a76f69ac0a445f440e03a0d4d/src/tink/core/Error.hx:112: characters 9-31 : Warning : Std.instance() is deprecated. Use Std.downcast() instead.
+PS C:\Users\gabriel.hayes\Desktop\test\tink> hl test-server.hl
+src/TestServer.hx:20: Listening at http://localhost:8080    
+src/tink/tcp/hl/HlAcceptor.hx:47: Success(tink.tcp.OpenPort)
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+src/TestServer.hx:45: Hello
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShel
