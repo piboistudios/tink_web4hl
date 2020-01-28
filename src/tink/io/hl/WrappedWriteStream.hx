@@ -21,35 +21,33 @@ class WrappedWriteStream {
 	}
 
 	public function end():Promise<Bool> {
-		
 		var didEnd = false;
 		this.ended.handle(() -> {
 			didEnd = true;
 		});
-		
+
 		if (didEnd) {
 			return false;
 		}
 		native.close(() -> {
-			
 			this.endTrigger.trigger(Success(false));
 		});
-		
+
 		return this.ended.map(_ -> true);
 	}
+
 	public function write(chunk:Chunk):Promise<Bool> {
-		
 		return Future.async(cb -> {
 			if (chunk.length == 0) {
 				cb(Success(true));
 				return;
 			}
 			var buf = chunk.toBytes();
-			
+
 			this.native.write(buf, result -> {
 				final outcome = result ? Success(true) : Failure(new Error('Unable to write chunk ($chunk)'));
 				cb(outcome);
 			});
-		});
+		}).first(this.ended);
 	}
 }

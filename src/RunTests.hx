@@ -16,13 +16,13 @@ class ClientServerTests {
 	public var asserts = new tink.unit.AssertionBuffer();
 
 	public function new() {}
-
+    @:timeout(10000000)
 	public function test_large_file_endpoint() {
-		var input = sys.io.File.getContent("./test/fixtures/sample.pdf");
+		var input = sys.io.File.getContent("./test/fixtures/sample.txt");
 		TestClient.inst.large_file(input).handle(res -> {
 			switch (res) {
 				case Failure(res):
-					sys.io.File.saveContent("./large_file_error.json", haxe.Json.stringify({
+					sys.io.File.saveContent("./output/large_file_error.json", haxe.Json.stringify({
 						message: res.message,
 						code: res.code,
 						data: res.data,

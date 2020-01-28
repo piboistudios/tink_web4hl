@@ -1,13 +1,15 @@
+-lib http-status
 -lib tink_io	
 -lib tink_tcp	
 -lib tink_http	
 -lib tink_web	
+-lib tink_multipart
 -cp src	
 -main TestServer	
 -D server
 --each	
 
 -hl bin/hl/test-server.hl	
-# --next	
-# -lib hxnodejs	
-# -js bin/js/test-server.js 
+--next	
+-lib hxnodejs	
+-js bin/js/test-server.js 
