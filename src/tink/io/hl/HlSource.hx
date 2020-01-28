@@ -9,7 +9,7 @@ class HlSource extends Generator<Chunk, Error> {
 		super(Future.async(cb -> {
 			target.read().handle(o -> cb(switch o {
 				case Success(null):
-					var out = sys.io.File.append('./chunks.out');
+					var out = sys.io.File.append('./output/chunks.out');
 
 					out.write(haxe.io.Bytes.ofString('===================End chunk\r\n\r\n'));
 
@@ -17,7 +17,7 @@ class HlSource extends Generator<Chunk, Error> {
 					out.close();
 					End;
 				case Success(chunk):
-					var out = sys.io.File.append('./chunks.out');
+					var out = sys.io.File.append('./output/chunks.out');
 					var bytes = chunk.toBytes();
 					out.write(haxe.io.Bytes.ofString('New chunk (${bytes.length} bytes):\r\n\r\n'));
 					out.write(bytes);

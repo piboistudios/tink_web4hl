@@ -37,7 +37,7 @@ class TestServer {
 			body.pipeTo(outSink).handle(res -> {
 				var text = output.getBytes().toString();
 				response.trigger(text);
-				sys.io.File.saveContent("./response.out", text);
+				sys.io.File.saveContent("./output/response.out", text);
 			});
 			trace("Responding.");
 			return response;

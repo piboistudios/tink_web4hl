@@ -1,1 +1,0 @@
-{"callStack":[],"code":411,"data":null,"exceptionStack":[],"message":"Http Error #411","pos":{"className":"tink.http.clients.StdClient","fileName":"tink/http/clients/StdClient.hx","methodName":"request","lineNumber":44}}

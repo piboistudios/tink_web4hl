@@ -18,7 +18,7 @@ class ClientServerTests {
 	public function new() {}
 
 	public function test_large_file_endpoint() {
-		var input = sys.io.File.getContent("./sample.pdf");
+		var input = sys.io.File.getContent("./test/fixtures/sample.pdf");
 		TestClient.inst.large_file(input).handle(res -> {
 			switch (res) {
 				case Failure(res):
