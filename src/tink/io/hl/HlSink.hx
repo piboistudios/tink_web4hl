@@ -21,7 +21,7 @@ class HlSink extends SinkBase<Error, Noise> {
 		var ret = source.forEach(c -> {
 			if (first) {
 				first = false;
-				trace('First chunk: $c');
+				
 			}
 			return target.write(c).map(w -> switch w {
 				case Success(true): Resume;
@@ -31,11 +31,11 @@ class HlSink extends SinkBase<Error, Noise> {
 		});
 
 		if (options.end) {
-			trace('end');
+			
 			ret.handle(function(end) {
-				trace(end);
-				target.end().handle(res -> trace(res));
-				trace('end');
+				
+				target.end().handle(res ->{});
+				
 			});
 		}
 		return ret.map(function(c) return c.toResult(Noise));

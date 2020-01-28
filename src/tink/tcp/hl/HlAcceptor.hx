@@ -43,7 +43,6 @@ class HlAcceptor {
 					destroy: () -> {
 						cnx.readStop();
 						cnx.close(() -> {
-							trace("Closed.");
 						});
 					}
 				});
@@ -51,7 +50,7 @@ class HlAcceptor {
 			haxe.Timer.delay(() -> {
 				var res = Success(new OpenPort(s, port));
 				cb(res);
-				trace(res);
+				
 			}, 0);
 		});
 	}

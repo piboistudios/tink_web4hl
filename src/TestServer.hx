@@ -31,15 +31,12 @@ class Root {
 
 	@:post('/large-file')
 	public function large_file(body:RealSource) {
-		trace("Receiving large_file");
 		var output = new haxe.io.BytesOutput();
 		var outSink = Sink.ofOutput('some-new-sink', output);
 		var response = Future.trigger();
 		body.pipeTo(outSink).handle(res -> {
 			var text = output.getBytes().toString();
 			response.trigger(text);
-			// for some reason only portion of file-content comes off of
-			// the body stream before this handler is invoked
 			sys.io.File.saveContent("./response.out", text);
 		});
 		return response;
