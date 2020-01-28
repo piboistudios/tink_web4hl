@@ -1,29 +1,33 @@
 package;
+
 import tink.http.containers.*;
 import tink.http.Response;
 import tink.web.routing.*;
 import tink.io.Source;
 import tink.io.Sink;
+#if hl
 import tink.tcp.hl.HlAcceptor;
+#end
+
 using tink.io.Source;
 using tink.CoreApi;
+
 class TestServer {
 	static var noop = () -> {};
-    static function main() {
-        var container = new TcpContainer(HlAcceptor.inst.bind.bind(8080)); 
-        //var container =  PhpContainer.inst; //use PhpContainer instead of NodeContainer when targeting PHP
-        var router = new Router<Root>(new Root());
-        container.run(function(req) {
-            return router.route(Context.ofRequest(req))
-                .recover(OutgoingResponse.reportError);
+
+	static function main() {
+		var container = new #if hxnodejs  NodeContainer(8080) #else TcpContainer(HlAcceptor.inst.bind.bind(8080))#end;
+		// var container =  PhpContainer.inst; //use PhpContainer instead of NodeContainer when targeting PHP
+		var router = new Router<Root>(new Root());
+		container.run(function(req) {
+			return router.route(Context.ofRequest(req)).recover(OutgoingResponse.reportError);
 		}).handle(noop);
 		trace("Listening at http://localhost:8080");
-		
-    }
+	}
 }
 
 class Root {
-    public function new() {}
+	public function new() {}
 
 	@:post('/large-file')
 	public function large_file(body:RealSource) {
@@ -35,18 +39,17 @@ class Root {
 			var text = output.getBytes().toString();
 			response.trigger(text);
 			// for some reason only portion of file-content comes off of
-				// the body stream before this handler is invoked
+			// the body stream before this handler is invoked
 			sys.io.File.saveContent("./response.out", text);
 		});
 		return response;
 	}
-    @:get('/')
-    @:get('/$name')
-	public function hello(name = 'World'){
 
-	trace("Hello");	
-		return 'Hello, $name!';
+	@:get('/')
+
+	// @:get('/$name')
+	public function hello() {
+		trace("Hello");
+		return 'Hello!';
 	}
-	
 }
-

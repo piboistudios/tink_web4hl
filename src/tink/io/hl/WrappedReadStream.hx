@@ -19,26 +19,27 @@ class WrappedReadStream {
 		});
 		if (onEnd != null) {
 			this.end.handle(() -> {
-				haxe.Timer.delay(() -> onEnd(), 0);
+				onEnd();
 			});
 		}
 	}
 
 	public function read():Promise<Null<Chunk>> {
+		trace("Read");
 		return Future.async(cb -> {
 			function attempt() {
 				try {
-
-					native.readStart(data -> switch(data) {
-						case null: cb(Success(tink.Chunk.EMPTY));
+					native.readStart(data -> switch (data) {
+						case null: 
+							trace("=========================END READ")
+							cb(Success(null));
 						case d: cb(Success(tink.Chunk.ofBytes(d)));
 					});
-				}
-				catch (e:Dynamic) {
+				} catch (e:Dynamic) {
 					cb(Failure(Error.withData('Error while reading from $name', e)));
 				}
 			}
 			attempt();
-		}).first(this.end);
+		});
 	}
 }

@@ -1,0 +1,7111 @@
+New chunk (65536 bytes):
+
+POST /large-file HTTP/1.1
+content-length: 125880
+cache-control: no-cache
+Postman-Token: 95beb20c-8a78-466a-8c81-b992ffe04da5
+Content-Type: text/plain
+User-Agent: PostmanRuntime/7.4.0
+Accept: */*
+Host: localhost:8080
+accept-encoding: gzip, deflate
+Connection: keep-alive
+
+package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+package tink.io.nodejs;
+
+import js.nodeNew chunk (65536 bytes):
+
+POST /large-file HTTP/1.1
+content-length: 125880
+cache-control: no-cache
+Postman-Token: 40027834-c4b6-4891-bbeb-7dc409b4587a
+Content-Type: text/plain
+User-Agent: PostmanRuntime/7.4.0
+Accept: */*
+Host: localhost:8080
+accept-encoding: gzip, deflate
+Connection: keep-alive
+
+package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+package tink.io.nodejs;
+
+import js.nodeNew chunk (65536 bytes):
+
+POST /large-file HTTP/1.1
+content-length: 125880
+cache-control: no-cache
+Postman-Token: 6087efef-28e8-4d33-86c1-d02b1cca3244
+Content-Type: text/plain
+User-Agent: PostmanRuntime/7.4.0
+Accept: */*
+Host: localhost:8080
+accept-encoding: gzip, deflate
+Connection: keep-alive
+
+package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+    
+    this.name = name;
+    this.native = native;
+    
+    this.ended = Future.async(function (cb) {
+      native.once('end', function () cb(Success(false)));
+      native.once('finish', function () cb(Success(false)));
+      native.once('close', function () cb(Success(false)));
+      native.on('error', function (e:{ code:String, message:String }) cb(Failure(new Error('${e.code}: ${e.message}'))));            
+    });
+    
+  }
+  
+  public function end():Promise<Bool> {
+    var didEnd = false;
+    
+    ended.handle(function () didEnd = true).dissolve();
+    
+    if (didEnd)
+      return false;
+    
+    native.end();
+    
+    return ended.next(function (_) return true);
+  }
+  
+  public function write(chunk:Chunk):Promise<Bool> 
+    return Future.async(function (cb) {
+      if(chunk.length == 0) {
+        cb(Success(true));
+        return;
+      }
+      var buf = 
+        if (Buffer.isBuffer(untyped chunk.buffer)) untyped chunk.buffer;
+        else Buffer.hxFromBytes(chunk.toBytes());//TODO: the above branch is ugly and this one is wasteful
+      native.write(buf, cb.bind(Success(true)));
+    }).first(ended);
+}package tink.io.nodejs;
+
+import js.node.Buffer;
+import js.node.stream.Writable;
+import tink.Chunk;
+
+using tink.CoreApi;
+
+class WrappedWritable {
+  
+  var ended:Promise<Bool>;
+  var name:String;
+  var native:IWritable;
+      
+  public function new(name, native) {
+package tink.io.nodejs;
+
+import js.node

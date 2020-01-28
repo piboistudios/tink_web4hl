@@ -4,5 +4,9 @@
 -lib tink_web
 -cp src
 -main TestServer
+--each
 
 -hl test-server.hl
+--next
+-lib hxnodejs
+-js test-server.js
