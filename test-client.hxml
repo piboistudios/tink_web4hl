@@ -1,0 +1,13 @@
+-lib tink_http	
+-lib tink_io	
+-lib tink_web	
+-lib tink_core
+-lib tink_unittest
+-cp src	
+-main RunTests	
+--each	
+
+-hl bin/hl/test-client.hl	
+# --next	
+# -lib hxnodejs	
+# -js bin/js/test-client.js 
