@@ -1,5 +1,6 @@
 -lib http-status
 -lib tink_io	
+-lib tink_xml
 -lib tink_tcp	
 -lib tink_http	
 -lib tink_web	

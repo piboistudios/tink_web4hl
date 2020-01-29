@@ -25,7 +25,11 @@ class TestServer {
 		trace("Listening at http://localhost:8080");
 	}
 }
-
+typedef TestPayload = {
+	var name:String;
+	var job:String;
+	var age:Int;
+};
 class Root {
 	public function new() {}
 
@@ -41,6 +45,32 @@ class Root {
 		});
 		trace("Responding.");
 		return response;
+	}
+	@:post('/xml')
+	
+	public function xml(body:String) {
+		trace(body);
+		final data =  new haxe.xml.Access(Xml.parse(body).firstElement());
+		return haxe.Json.stringify({
+			name: data.node.Name.innerData,
+			age: data.node.Age.innerData,
+			job: data.node.Job.innerData
+		});
+	}
+
+	@:get("/test-xml-parser")
+	public function test_xml_parser() {
+		final xml = '<Entity>
+		<Name>Gabriel</Name>
+		<Job>Software Engineer</Job>
+		<Age>23</Age>
+	</Entity>';
+		var parsed = new tink.xml.Structure<{
+			var name:String;
+			var job:String;
+			var age:Int;
+		}>().read(xml).sure();
+		return haxe.Json.stringify(parsed);
 	}
 
 	@:get('/')

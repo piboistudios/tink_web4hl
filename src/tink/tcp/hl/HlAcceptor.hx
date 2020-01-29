@@ -15,12 +15,12 @@ class HlAcceptor {
 	function new() {}
 
 	public function bind(?_port:Int):Promise<OpenPort> {
-		return Future.async(cb -> {
+		return Future.async(function(cb) {
 			var s = new SignalTrigger<Session>();
 			var port = _port != null ? _port : 8080;
 			var server = new Tcp();
 			server.bind(new Host("127.0.0.1"), port);
-			server.listen(10, () -> {
+			server.listen(10, function() {
 				var cnx = server.accept();
 				var from:Endpoint = {
 					host: "127.0.0.1",
@@ -40,17 +40,15 @@ class HlAcceptor {
 						stream: stream,
 						closed: closed
 					},
-					destroy: () -> {
+					destroy: function() {
 						cnx.readStop();
-						cnx.close(() -> {
-						});
+						cnx.close(function() {});
 					}
 				});
 			});
-			haxe.Timer.delay(() -> {
+			haxe.Timer.delay(function() {
 				var res = Success(new OpenPort(s, port));
 				cb(res);
-				
 			}, 0);
 		});
 	}

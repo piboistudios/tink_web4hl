@@ -1,6 +1,7 @@
-# @install: lix --silent download "gh://github.com/piboistudios/tink_web#38723ea5f65d766fbb3a78cc1f62f7650426710f" into tink_web/0.2.0/github/38723ea5f65d766fbb3a78cc1f62f7650426710f
+# @install: lix --silent download "gh://github.com/piboistudios/tink_web#8d8066cca1c09ebb5864b79bbfbf309ad60244bc" into tink_web/0.2.0/github/8d8066cca1c09ebb5864b79bbfbf309ad60244bc
 -lib tink_http
 -lib tink_json
 -lib tink_querystring
--cp ${HAXE_LIBCACHE}/tink_web/0.2.0/github/38723ea5f65d766fbb3a78cc1f62f7650426710f/src
+-lib tink_xml
+-cp ${HAXE_LIBCACHE}/tink_web/0.2.0/github/8d8066cca1c09ebb5864b79bbfbf309ad60244bc/src
 -D tink_web=0.2.0

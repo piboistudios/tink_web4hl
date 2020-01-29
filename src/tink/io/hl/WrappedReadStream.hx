@@ -14,21 +14,21 @@ class WrappedReadStream {
 		this.name = name;
 		this.native = native;
 		this.chunkSize = chunkSize;
-		this.end = Future.async(cb -> {
+		this.end = Future.async(function(cb) {
 			this.onceEnded = cb;
 		});
 		if (onEnd != null) {
-			this.end.handle(() -> {
+			this.end.handle(function(()) {
 				onEnd();
 			});
 		}
 	}
 
 	public function read():Promise<Null<Chunk>> {
-		return Future.async(cb -> {
+		return Future.async(function(cb) {
 			function attempt() {
 				try {
-					native.readStart(data -> switch (data) {
+					native.readStart(function(data) switch (data) {
 						case null: 
 							cb(Success(null));
 						case d: 
