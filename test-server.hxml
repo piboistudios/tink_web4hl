@@ -10,11 +10,13 @@
 -cp src	
 -main TestServer	
 -D server
+-D error_stack
 --each	
 -D concurrent
 -hl bin/hl/thread-pooled-server.hl	
 --next
 -hl bin/hl/single-threaded-server.hl	
 --next	
--lib hxnodejs	
+
+-lib hxnodejs
 -js bin/js/test-server.js 

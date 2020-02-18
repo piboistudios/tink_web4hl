@@ -17,7 +17,7 @@ class TestServer {
 	static var noop = () -> {};
 
 	static function main() {
-		var container = new #if hxnodejs NodeContainer(8080) #else TcpContainer(HlAcceptor.inst.bind2.bind(8080)) #end;
+		var container = new #if hxnodejs NodeContainer(8080) #elseif  TcpContainer(HlAcceptor.inst.bind2.bind(8080)) #end;
 		// var container =  PhpContainer.inst; //use PhpContainer instead of NodeContainer when targeting PHP
 		var router = new Router<Root>(new Root());
 		container.run(function(req) {
@@ -53,13 +53,11 @@ class Root {
 		var outSink = Sink.ofOutput('some-new-sink', output);
 		var response = Future.trigger();
 		var chunks = [];
-		trace(body);
 		body.pipeTo(outSink).handle(res -> {
 			var text = output.getBytes().toString();
 			response.trigger(text);
 			sys.io.File.saveContent("./output/response.out", text);
 		});
-		trace("Responding.");
 		return response;
 	}
 

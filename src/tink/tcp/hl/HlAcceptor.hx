@@ -27,7 +27,7 @@ class HlAcceptor {
 						};
 						@:privateAccess cnx.onClose = onClosed;
 						s.trigger({
-							sink: cast cnx.sink,
+							sink: cnx.sink,
 							incoming: {
 								from: cnx.peer,
 								to: {
