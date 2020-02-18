@@ -5,16 +5,14 @@ import tink.CoreApi;
 
 class HlSource extends Generator<Chunk, Error> {
 	function new(target:WrappedReadStream) {
-        
-		super(Future.async(cb -> {
-			target.read().handle(o -> cb(switch o {
+		super(Future.async(function(cb) {
+			target.read().handle(function(o) return cb(switch o {
 				case Success(null):
 					End;
 				case Success(chunk):
 					Link(chunk, new HlSource(target));
-				case Failure(e): 
-                    
-                    Fail(e);
+				case Failure(e):
+					Fail(e);
 			}));
 		} #if !tink_core_2, true #end));
 	}

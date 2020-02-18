@@ -14,13 +14,47 @@ class HlAcceptor {
 
 	function new() {}
 
+	public function bind2(port:Int):Promise<OpenPort>
+		return Future.async(cb -> {
+			var s = new SignalTrigger<Session>();
+			tink.tcp.Server.bind(port).handle(o -> switch (o) {
+				case Success(server):
+					server.connected.handle(cnx -> {
+						var closeTrigger = Future.trigger();
+						var closed = closeTrigger.asFuture();
+						var onClosed = cnx -> {
+							closeTrigger.trigger(Noise);
+						};
+						@:privateAccess cnx.onClose = onClosed;
+						s.trigger({
+							sink: cast cnx.sink,
+							incoming: {
+								from: cnx.peer,
+								to: {
+									host: "127.0.0.1",
+									port: port
+								},
+								stream: cnx.source,
+								closed: closed
+							},
+							destroy: () -> {
+								cnx.close();
+								return;
+							}
+						});
+					});
+				case Failure(e): cb(Failure(e));
+			});
+			cb(Success(new OpenPort(s, port)));
+		});
+
 	public function bind(?_port:Int):Promise<OpenPort> {
-		return Future.async(function(cb) {
+		return Future.async(cb -> {
 			var s = new SignalTrigger<Session>();
 			var port = _port != null ? _port : 8080;
 			var server = new Tcp();
 			server.bind(new Host("127.0.0.1"), port);
-			server.listen(10, function() {
+			server.listen(10, () -> {
 				var cnx = server.accept();
 				var from:Endpoint = {
 					host: "127.0.0.1",
@@ -40,13 +74,13 @@ class HlAcceptor {
 						stream: stream,
 						closed: closed
 					},
-					destroy: function() {
+					destroy: () -> {
 						cnx.readStop();
-						cnx.close(function() {});
+						cnx.close(() -> {});
 					}
 				});
 			});
-			haxe.Timer.delay(function() {
+			haxe.Timer.delay(() -> {
 				var res = Success(new OpenPort(s, port));
 				cb(res);
 			}, 0);

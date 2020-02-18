@@ -18,7 +18,7 @@ class WrappedReadStream {
 			this.onceEnded = cb;
 		});
 		if (onEnd != null) {
-			this.end.handle(function(()) {
+			this.end.handle(function() {
 				onEnd();
 			});
 		}

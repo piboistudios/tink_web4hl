@@ -46,7 +46,7 @@ class WrappedWriteStream {
 
 			this.native.write(buf, function(result) {
 				var outcome = result ? Success(true) : Failure(new Error('Unable to write chunk ($chunk)'));
-				cb(outcome);
+				return cb(outcome);
 			});
 		}).first(this.ended);
 	}
